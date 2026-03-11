@@ -1,6 +1,6 @@
-# EISGRC Ticket Organizer
+# Jira Ticket Organizer
 
-A local React drag-and-drop board for organizing Jira-style tickets across EISGRC columns.
+A local React drag-and-drop board for organizing Jira tickets across EISGRC columns.
 No Jira login. No internet required. Board state saves locally and can be shared as a JSON file.
 
 ---

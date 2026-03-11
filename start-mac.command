@@ -4,7 +4,7 @@
 cd "$(dirname "$0")"
 
 echo "====================================="
-echo " EISGRC Ticket Organizer"
+echo " Jira Ticket Organizer"
 echo "====================================="
 echo ""
 echo "Starting server at http://localhost:3000"

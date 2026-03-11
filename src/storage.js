@@ -2,7 +2,7 @@
 
 export function saveBoard(columns) {
   try {
-    localStorage.setItem('eisgrc-board', JSON.stringify(columns));
+    localStorage.setItem('jira-board', JSON.stringify(columns));
   } catch (e) {
     // storage full or unavailable — silently ignore
   }
@@ -10,7 +10,8 @@ export function saveBoard(columns) {
 
 export function loadBoard() {
   try {
-    const raw = localStorage.getItem('eisgrc-board');
+    // Prefer new key; fall back to old key (eisgrc-board) for migration
+    const raw = localStorage.getItem('jira-board') || localStorage.getItem('eisgrc-board');
     if (!raw) return null;
     return JSON.parse(raw);
   } catch {
@@ -22,7 +23,7 @@ export function loadBoard() {
 
 export function saveSettings(s) {
   try {
-    localStorage.setItem('eisgrc-settings', JSON.stringify(s));
+    localStorage.setItem('jira-settings', JSON.stringify(s));
   } catch (e) {
     // ignore
   }
@@ -30,7 +31,8 @@ export function saveSettings(s) {
 
 export function loadSettings() {
   try {
-    const raw = localStorage.getItem('eisgrc-settings');
+    // Prefer new key; fall back to old key (eisgrc-settings) for migration
+    const raw = localStorage.getItem('jira-settings') || localStorage.getItem('eisgrc-settings');
     if (!raw) return { theme: 'system' };
     return JSON.parse(raw);
   } catch {
@@ -48,7 +50,7 @@ export function appendLog(event, details) {
     String(today.getDate()).padStart(2, '0'),
   ].join('-');
 
-  const key = `eisgrc-log-${dateStr}`;
+  const key = `jira-log-${dateStr}`;
 
   let entries = [];
   try {
@@ -68,7 +70,7 @@ export function appendLog(event, details) {
 
   // Rotate: keep only the 7 most recent log keys
   const logKeys = Object.keys(localStorage)
-    .filter(k => k.startsWith('eisgrc-log-'))
+    .filter(k => k.startsWith('jira-log-'))
     .sort();
 
   if (logKeys.length > 7) {
@@ -79,15 +81,15 @@ export function appendLog(event, details) {
 
 export function getLogDates() {
   return Object.keys(localStorage)
-    .filter(k => k.startsWith('eisgrc-log-'))
+    .filter(k => k.startsWith('jira-log-'))
     .sort()
     .reverse()
-    .map(k => k.replace('eisgrc-log-', ''));
+    .map(k => k.replace('jira-log-', ''));
 }
 
 export function getLog(date) {
   try {
-    const raw = localStorage.getItem(`eisgrc-log-${date}`);
+    const raw = localStorage.getItem(`jira-log-${date}`);
     if (!raw) return [];
     return JSON.parse(raw);
   } catch {

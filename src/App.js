@@ -298,7 +298,7 @@ function App() {
 
   function handleExport() {
     const date = new Date().toISOString().slice(0, 10);
-    const filename = `eisgrc-board-${date}.json`;
+    const filename = `jira-board-${date}.json`;
     const blob = new Blob([JSON.stringify(columns, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -310,7 +310,7 @@ function App() {
   return (
     <div className="App">
       <div className="app-header">
-        <h1>EISGRC Ticket Organizer</h1>
+        <h1>Jira Ticket Organizer</h1>
         <button className="settings-btn" onClick={() => setSettingsOpen(true)}>⚙ Settings</button>
       </div>
 

@@ -2,7 +2,7 @@
 set -e
 
 echo "====================================="
-echo " EISGRC Ticket Organizer — macOS Setup"
+echo " Jira Ticket Organizer — macOS Setup"
 echo "====================================="
 echo ""
 

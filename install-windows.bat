@@ -1,5 +1,5 @@
 @echo off
-title EISGRC Ticket Organizer — Setup
+title Jira Ticket Organizer — Setup
 echo.
 echo Running installer...
 echo.

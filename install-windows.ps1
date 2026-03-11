@@ -1,9 +1,9 @@
-# EISGRC Ticket Organizer — Windows Setup Script
+# Jira Ticket Organizer — Windows Setup Script
 # Called by install-windows.bat with -ExecutionPolicy Bypass
 
 Write-Host ""
 Write-Host "=====================================" -ForegroundColor Cyan
-Write-Host " EISGRC Ticket Organizer — Windows Setup" -ForegroundColor Cyan
+Write-Host " Jira Ticket Organizer — Windows Setup" -ForegroundColor Cyan
 Write-Host "=====================================" -ForegroundColor Cyan
 Write-Host ""
 

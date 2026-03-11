@@ -1,8 +1,8 @@
 @echo off
-title EISGRC Ticket Organizer
+title Jira Ticket Organizer
 echo.
 echo =====================================
-echo  EISGRC Ticket Organizer
+echo  Jira Ticket Organizer
 echo =====================================
 echo.
 echo Starting server at http://localhost:3000
